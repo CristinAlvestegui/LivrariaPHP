@@ -40,7 +40,7 @@
             
         public function fazerLog(Login $log, Login $pass){
             if(($log->getSenha() == $senha) &&($pass->getSenha() == $log)){
-                echo "login com sucesso!" //e leva para tela de livros.
+                echo "login com sucesso!";//e leva para tela de livros.
             }
         }
 
