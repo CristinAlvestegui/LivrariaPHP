@@ -113,7 +113,11 @@
         public function setPais(string $pais) : void
         {
             $this-> pais = $pais;
-        }//fim set numero        
+        }//fim set numero
+        
+        public function verEndere() : void{
+            echo "<br> Logradouro:  ".$this->getLogradouro()."<br> Número:  ".$this->getNumero()."<br> Complemento:  ".$this->getComplemento();
+        }
 
     }// fim classe endereço
 

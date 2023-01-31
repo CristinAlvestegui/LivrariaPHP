@@ -6,13 +6,17 @@
         private string $data;
         private string $editora;
         private int $ISBN;
+        
+        
 
         public function __construct(string $titulo, string $autor, string $data, string $editora, int $ISBN){
             $this->titulo = $titulo;
             $this->autor = $autor;
             $this->data = $data;
             $this->editora = $editora;
+            
             $this->ISBN = $ISBN;
+            
         }
 
         //GET SET
@@ -55,6 +59,10 @@
 
         public function setISBN(int $ISBN) : void{
             $this->ISBN = $ISBN;
+        }
+
+        public function verLivro() : void{//quando cheguemos a vetores, aqui podemos pedir como parametro o codigo do livro!!!! chachan!!!!
+            echo "<br> Titulo:  ".$this->getTitulo()."<br>Autor:  ".$this->getAutor()."<br> Data lançamento:  ".$this->getData()."<br>Editora:  ".$this->getEditora()."<br> ISBN - ".$this->getISBN();
         }
 
     }//Fim da classe livros

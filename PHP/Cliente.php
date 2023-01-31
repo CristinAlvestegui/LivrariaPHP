@@ -72,6 +72,10 @@ class Cliente{
     {
         $this->senha = $senha;
     }//fim set telefone
+
+    public function verCliente() : void{
+        echo "<br>Nome:  ".$this->getNome()."<br>Telefone:  ".$this->getTelefone()."<br>Aniversário:  ".$this->getNascimento();
+    }
 }// fim da classe pessoa
 
 ?>
