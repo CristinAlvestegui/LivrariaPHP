@@ -5,8 +5,7 @@ class Cliente{
     private string $nome;
     private string $telefone;
     private string $nascimento;
-    private string $login;
-    private string $senha;
+    
 
     private Endereco $endereco;    
 
@@ -16,8 +15,7 @@ class Cliente{
         $this->telefone   = $telefone;
         $this->endereco   = $endereco;
         $this->nascimento = $nascimento;
-        $this->login      = $login;
-        $this->senha      = $senha;
+        
 
     }//fim do construtor
 
@@ -53,25 +51,7 @@ class Cliente{
         $this->nascimento = $nascimento;
     }//fim set nascimento
 
-    public function getLogin() : string
-    {
-        return $this->login;            
-    }//fim get login
-
-    public function setLogin(string $login) : void
-    {
-        $this->login = $login;
-    }//fim set login
-
-    public function getSenha() : string
-    {
-        return $this->senha;            
-    }//fim get senha
-
-    public function setSenha(string $senha) : void
-    {
-        $this->senha = $senha;
-    }//fim set telefone
+    
 
     public function verCliente() : void{
         echo "<br>Nome:  ".$this->getNome()."<br>Telefone:  ".$this->getTelefone()."<br>Aniversário:  ".$this->getNascimento();
