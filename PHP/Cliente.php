@@ -9,7 +9,7 @@ class Cliente{
 
     private Endereco $endereco;    
 
-    public function __construct (string $nome, string $telefone , Endereco $endereco, string $nascimento,string $login,string $senha){
+    public function __construct (string $nome, string $telefone , Endereco $endereco, string $nascimento){
 
         $this->nome       = $nome;
         $this->telefone   = $telefone;
