@@ -1,5 +1,8 @@
 <?php
+    namespace Livraria\PHP\Modelo\Nicho;
+
     require_once("Livro.php");
+    
     class Docks{
         private int $quanti;
         private float $preco;

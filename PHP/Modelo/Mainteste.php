@@ -1,4 +1,5 @@
 <?php
+        namespace Livraria\PHP\Modelo;
 
         require_once('Livro.php');
         require_once('Cliente.php');

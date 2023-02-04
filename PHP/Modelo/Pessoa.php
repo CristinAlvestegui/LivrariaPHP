@@ -1,5 +1,6 @@
 <?php
-    
+    namespace Livraria\PHP\Modelo;
+
     require_once('Endereco.php');
 
     class Pessoa{

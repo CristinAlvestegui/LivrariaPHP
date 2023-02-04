@@ -1,7 +1,10 @@
 <?php
+    namespace Livraria\PHP\Modelo\Compra;
+
     require_once('Endereco.php');
 
 class Cliente{
+    
     private string $nome;
     private string $telefone;
     private string $nascimento;

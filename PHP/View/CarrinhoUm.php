@@ -1,4 +1,6 @@
 <?php
+    namespace Livraria\PHP\Modelo\Compra;
+
     /*
     require_once('TelaLivros.php');
     require_once('Cliente');

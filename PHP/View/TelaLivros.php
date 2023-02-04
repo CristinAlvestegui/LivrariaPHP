@@ -1,8 +1,15 @@
 <?php
-    //namespace PHP\Modelo;
+    namespace PHP\Modelo;
 
-    require_once('Livro.php');
-    require_once('Docks.php');
+    require_once('DAO/Conexao.php');
+    require_once('DAO/InLivros.php');
+    require_once('DAO/ConsuLivros.php');
+    require_once('Nicho/Livro.php');
+    require_once('Nicho/Docks.php');
+
+    use PHP\Modelo\DAO\Conexao;
+    use PHP\Modelo\DAO\ConsuLivro;
+    use PHP\Modelo\DAO\InLivros;
 
     /*
     class TelaLivros{
@@ -31,7 +38,7 @@
     }//Fim da classe Tela Livros   
     //use PHP\Modelo\Livro;
 
-    */
+    
 
 
     $livroUm = new Livro("Harry Potter","J.K.Rollling", "12/5/2000","Salamandra", 4561468);
@@ -47,4 +54,13 @@
     echo "<br> <br>";
     echo $livroTres->verLivro();
     echo "<br> <br>";
+
+    */
+
+    echo "++++++++++++ Banco de Dados +++++++++++++++<br><br><br>";
+    $entrar = new Conexao();
+    $entrar->conectar();
+    $regis = new InLivros();
+
+    echo $regis->cadastrar($entrar, "Livros", "Harry Potter", "J.K.Rollling", "12/5/2000", "Salamandra", 4561468);
 ?>
