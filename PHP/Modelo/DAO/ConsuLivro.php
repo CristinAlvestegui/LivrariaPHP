@@ -1,9 +1,9 @@
 <?php
-    namespace PHP\Modelo\DAO;
+    namespace Livraria\PHP\Modelo\DAO;
 
     require_once('Conexao.php');
 
-    use PHP\Modelo\DAO\Conexao;
+    use Livraria\PHP\Modelo\DAO\Conexao;
 
     class ConsuLivro{
 
@@ -15,7 +15,7 @@
                 mysqli_close($conn);
                 while($dados = mysqli_fetch_Array($result)){
                     if($dados["ISBN"] == $ISBN){
-                        echo "<br>ISBN: ".$dados["ISBN"]."<br>Titulo: ".$dados["titulo"]."<br>Autor: ".$dados["autor"]."<br>Editora: ".$dados["editora"]."Lançamento: ".$dados["data"];
+                        echo "<br><br>ISBN ".$dados["ISBN"]."<br>Titulo: ".$dados["titulo"]."<br>Autor: ".$dados["autor"]."<br>Editora: ".$dados["editora"]."<br>Lançamento: ".$dados["lanza"]."<br><br>";
                         return;//return vazio só para sair do if
                     }//Fim do if
                 }//Fim do while
@@ -24,7 +24,22 @@
             catch(Except $erro){
                 echo $erro;
             }
-        }
+        }//Fim da função para consultar livros individuais
+
+        public function consulTudo(Conexao $connect, string $Livros){
+            try{
+                $conn = $connect->conectar();
+                $sql = "select * from $Livros";
+                $result = mysqli_query($conn, $sql);
+                while($dados = mysqli_fetch_Array($result)){
+                    echo "<br><br>ISBN ".$dados["ISBN"]."<br>Titulo: ".$dados["titulo"]."<br>Autor: ".$dados["autor"]."<br>Editora: ".$dados["editora"]."<br>Lançamento: ".$dados["lanza"]."<br><br>";
+                }//Fim do while
+                mysqli_close($conn);
+            }
+            catch(Except $erro){
+                echo $erro;
+            }//Fim do Try Catch
+        }//Fim do método para Consultar todos os livros
     }//Fim da classe para consultar individualmente
 
 ?>

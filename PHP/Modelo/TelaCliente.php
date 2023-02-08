@@ -1,9 +1,16 @@
 <?php
-  //namespace PHP;
-  require_once ('Cliente.php'); // chama a classe cliente
-  require_once ('Endereco.php');
+  namespace Livraria\PHP\Modelo;
+  
+  require_once('DAO/Conexao.php');
+  require_once('DAO/InEndere.php');
+  require_once('DAO/ConsuEndere.php');
+
+  use Livraria\PHP\Modelo\DAO\Conexao;
+  use Livraria\PHP\Modelo\DAO\InEndere;
+  use Livraria\PHP\Modelo\DAO\ConsuEndere;
   //use PHP\Modelo\Cliente;
 
+  /*
   $enderecCamila = new Endereco(
     "Avenida Senador Vergueiro",
     "400",
@@ -31,5 +38,13 @@
   echo "<br><br>";
   echo $clienTres->verCliente();
   echo $endereTres->verEndere();
+*/
 
+echo "********** Teste Banco de Dados ***********";
+$entrar = new Conexao();
+$entrar->conectar();
+$cadas = new InEndere();
+echo $cadas->cadastrar($entrar, "Address", "Av Bolivia", "265","Apto. 2", 46848, "Baeta Neves", "São Bernardo do Campo", "São Paulo", "SP", "Brasil");
+$verEnde = new ConsuEndere();
+echo $verEnde->consuTudo($entrar , "Address");
 ?>

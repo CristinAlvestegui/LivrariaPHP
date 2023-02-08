@@ -1,15 +1,17 @@
 <?php
-    namespace PHP\Modelo;
+    namespace Livraria\PHP\Modelo;
 
     require_once('DAO/Conexao.php');
     require_once('DAO/InLivros.php');
-    require_once('DAO/ConsuLivros.php');
-    require_once('Nicho/Livro.php');
-    require_once('Nicho/Docks.php');
+    require_once('DAO/ConsuLivro.php');
+    require_once('DAO/ConsuDocks.php');
+    require_once('DAO/InDocks.php');
 
-    use PHP\Modelo\DAO\Conexao;
-    use PHP\Modelo\DAO\ConsuLivro;
-    use PHP\Modelo\DAO\InLivros;
+    use Livraria\PHP\Modelo\DAO\Conexao;
+    use Livraria\PHP\Modelo\DAO\ConsuLivro;
+    use Livraria\PHP\Modelo\DAO\InLivros;
+    use Livraria\PHP\Modelo\DAO\InDocks;
+    use Livraria\PHP\Modelo\DAO\ConsuDocks;
 
     /*
     class TelaLivros{
@@ -60,7 +62,15 @@
     echo "++++++++++++ Banco de Dados +++++++++++++++<br><br><br>";
     $entrar = new Conexao();
     $entrar->conectar();
-    $regis = new InLivros();
 
-    echo $regis->cadastrar($entrar, "Livros", "Harry Potter", "J.K.Rollling", "12/5/2000", "Salamandra", 4561468);
+    $regis = new InLivros();
+    $nich = new InDocks();
+    $verLi = new ConsuLivro();
+    $verNi = new ConsuDocks();
+    //echo $regis->cadastrar($entrar, "Livros", "Harry Potter", "J.K.Rollling", "12/5/2000", "Salamandra", 7);
+    
+    echo $nich->cadastrar($entrar, "Nicho", 12, 45.69);
+    
+    echo $verLi->consulTudo($entrar, "Livros");
+    echo $verNi->consuTodo($entrar, "Nicho");
 ?>
